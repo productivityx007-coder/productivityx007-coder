@@ -74,19 +74,13 @@
 <img src="https://raw.githubusercontent.com/productivityx007-coder/productivityx007-coder/main/profile/streak.svg?v=1" width="800">
 
 <br><br>
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="github-snake-dark.svg">
-
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="github-snake.svg">
-
+<p align="center">
   <img
+    src="https://raw.githubusercontent.com/productivityx007-coder/productivityx007-coder/gh-pages/github-snake.svg"
     alt="GitHub Contribution Snake"
-    src="github-snake.svg">
-</picture>
+    width="100%"
+  />
+</p>
 
 <img src="https://github-readme-stats-eta-seven-10.vercel.app/api?username=productivityx007-coder&show_icons=true&count_private=true&include_all_commits=true&hide_rank=true&hide_border=true&title_color=22D3EE&icon_color=A78BFA&text_color=94A3B8&bg_color=0A101F" width="390">
 
