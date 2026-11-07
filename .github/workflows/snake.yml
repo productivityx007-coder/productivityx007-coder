@@ -1,198 +1,29 @@
-name: Generate Custom Contribution Snake
+name: Generate Snake Animation
 
 on:
   schedule:
     - cron: "0 */12 * * *"
   workflow_dispatch:
-  push:
-    branches:
-      - main
+
+permissions:
+  contents: write
 
 jobs:
   generate:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
-
     steps:
-      - name: Generate contribution snake
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: ${{ github.repository_owner }}
-        run: |
-          python3 - <<'PY'
-          import os
-          import json
-          import urllib.request
-          import urllib.error
-          import html
+      - name: Generate GitHub Snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/github-snake.svg?color_snake=#22d3ee&color_dots=#0b1220,#123047,#155e75,#0891b2,#22d3ee
+            dist/github-snake-dark.svg?color_snake=#22d3ee&color_dots=#0b1220,#123047,#155e75,#0891b2,#22d3ee
 
-          username = os.environ["USERNAME"]
-          token = os.environ["GH_TOKEN"]
-
-          query = """
-          query($login:String!) {
-            user(login:$login) {
-              contributionsCollection {
-                contributionCalendar {
-                  weeks {
-                    contributionDays {
-                      contributionCount
-                      contributionLevel
-                      date
-                    }
-                  }
-                }
-              }
-            }
-          }
-          """
-
-          data = json.dumps({
-              "query": query,
-              "variables": {"login": username}
-          }).encode()
-
-          req = urllib.request.Request(
-              "https://api.github.com/graphql",
-              data=data,
-              headers={
-                  "Authorization": f"bearer {token}",
-                  "Content-Type": "application/json",
-                  "User-Agent": "github-profile-snake"
-              }
-          )
-
-          with urllib.request.urlopen(req) as response:
-              result = json.load(response)
-
-          weeks = result["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
-
-          # GitHub contribution levels → visual intensity
-          level_color = {
-              "NONE": "#161B22",
-              "FIRST_QUARTILE": "#30363D",
-              "SECOND_QUARTILE": "#3730A3",
-              "THIRD_QUARTILE": "#7C3AED",
-              "FOURTH_QUARTILE": "#22D3EE"
-          }
-
-          cell = 12
-          gap = 4
-          step = cell + gap
-
-          width = len(weeks) * step + 20
-          height = 7 * step + 20
-
-          cells = []
-
-          for x, week in enumerate(weeks):
-              for y, day in enumerate(week["contributionDays"]):
-                  color = level_color.get(
-                      day["contributionLevel"],
-                      "#161B22"
-                  )
-
-                  px = 10 + x * step
-                  py = 10 + y * step
-
-                  cells.append(
-                      f'<rect x="{px}" y="{py}" '
-                      f'width="{cell}" height="{cell}" rx="3" '
-                      f'fill="{color}"/>'
-                  )
-
-          # Snake path follows the contribution grid in a continuous
-          # left-to-right / right-to-left path.
-          points = []
-
-          for x in range(len(weeks)):
-              column_x = 10 + x * step + cell / 2
-
-              if x % 2 == 0:
-                  ys = range(7)
-              else:
-                  ys = range(6, -1, -1)
-
-              for y in ys:
-                  points.append(
-                      f"{column_x},{10 + y * step + cell / 2}"
-                  )
-
-          path = " ".join(points)
-
-          svg = f"""<?xml version="1.0" encoding="UTF-8"?>
-          <svg xmlns="http://www.w3.org/2000/svg"
-               width="{width}"
-               height="{height}"
-               viewBox="0 0 {width} {height}">
-
-            <rect width="100%" height="100%" fill="#0A101F"/>
-
-            <g>
-              {"".join(cells)}
-            </g>
-
-            <polyline
-              points="{path}"
-              fill="none"
-              stroke="#22D3EE"
-              stroke-width="4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              opacity="0.95"
-              stroke-dasharray="18 12">
-
-              <animate
-                attributeName="stroke-dashoffset"
-                from="0"
-                to="-30"
-                dur="1.2s"
-                repeatCount="indefinite"/>
-            </polyline>
-
-            <circle r="6" fill="#FFFFFF">
-              <animateMotion
-                dur="12s"
-                repeatCount="indefinite"
-                rotate="auto">
-                <mpath href="#snake-path"/>
-              </animateMotion>
-            </circle>
-
-            <path
-              id="snake-path"
-              d="M {points[0]} "
-              fill="none"
-              stroke="none"/>
-          </svg>
-          """
-
-          # Fix the motion path by creating a proper path from the points.
-          d = "M " + " L ".join(points)
-
-          svg = svg.replace(
-              f'<path\n              id="snake-path"\n              d="M {points[0]} "\n              fill="none"\n              stroke="none"/>',
-              f'<path id="snake-path" d="{d}" fill="none" stroke="none"/>'
-          )
-
-          os.makedirs("dist", exist_ok=True)
-
-          with open("dist/github-snake.svg", "w", encoding="utf-8") as f:
-              f.write(svg)
-
-          with open("dist/github-snake-dark.svg", "w", encoding="utf-8") as f:
-              f.write(svg)
-
-          print("Custom contribution snake generated.")
-          PY
-
-      - name: Publish snake
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+      - name: Publish Snake
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           build_dir: dist
-          target_branch: output
-          commit_message: "Update custom contribution snake [skip ci]"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
