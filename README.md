@@ -69,7 +69,6 @@
 <p align="center">
   <i>Building. Learning. Breaking. Rebuilding.</i>
 </p>
-
 <!-- ==================== GITHUB STATS ==================== -->
 
 <div align="center">
