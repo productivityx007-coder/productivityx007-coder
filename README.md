@@ -69,37 +69,14 @@
 <p align="center">
   <i>Building. Learning. Breaking. Rebuilding.</i>
 </p>
-<!-- ==================== GITHUB STATS ==================== -->
-
 <div align="center">
 
-  <!-- GitHub Streak -->
-  <img
-    width="85%"
-    src="https://raw.githubusercontent.com/productivityx007-coder/productivityx007-coder/main/profile/streak.svg?v=1"
-    alt="GitHub Streak"
-  />
+<img src="https://raw.githubusercontent.com/productivityx007-coder/productivityx007-coder/main/profile/streak.svg?v=1" width="800">
 
-  <br><br>
+<br><br>
 
-  <table>
-    <tr>
-      <td width="50%">
-        <img
-          width="100%"
-          src="https://github-readme-stats-eta-seven-10.vercel.app/api?username=productivityx007-coder&show_icons=true&count_private=true&include_all_commits=true&hide_rank=true&hide_border=true&title_color=22D3EE&icon_color=A78BFA&text_color=94A3B8&bg_color=0A101F&card_width=500"
-          alt="GitHub Stats"
-        />
-      </td>
+<img src="https://github-readme-stats-eta-seven-10.vercel.app/api?username=productivityx007-coder&show_icons=true&count_private=true&include_all_commits=true&hide_rank=true&hide_border=true&title_color=22D3EE&icon_color=A78BFA&text_color=94A3B8&bg_color=0A101F" width="390">
 
-      <td width="50%">
-        <img
-          width="100%"
-          src="https://github-readme-stats-eta-seven-10.vercel.app/api/top-langs/?username=productivityx007-coder&layout=compact&langs_count=8&hide_border=true&title_color=22D3EE&text_color=94A3B8&bg_color=0A101F&card_width=500"
-          alt="Top Languages"
-        />
-      </td>
-    </tr>
-  </table>
+<img src="https://github-readme-stats-eta-seven-10.vercel.app/api/top-langs/?username=productivityx007-coder&layout=compact&langs_count=8&hide_border=true&title_color=22D3EE&text_color=94A3B8&bg_color=0A101F" width="390">
 
 </div>
