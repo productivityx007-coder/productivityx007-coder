@@ -1,1 +1,26 @@
+name: GitHub Snake
 
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate snake
+        uses: Platane/snk@v3
+        with:
+          github_user_name: productivityx007-coder
+          outputs: |
+            dist/github-snake.svg?color_snake=#22d3ee&color_dots=#0b1220,#123047,#155e75,#0891b2,#22d3ee
+
+      - name: Publish snake
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
