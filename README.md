@@ -77,15 +77,15 @@
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
-    srcset="https://raw.githubusercontent.com/productivityx007-coder/productivityx007-coder/output/github-snake-dark.svg">
+    srcset="github-snake-dark.svg">
 
   <source
     media="(prefers-color-scheme: light)"
-    srcset="https://raw.githubusercontent.com/productivityx007-coder/productivityx007-coder/output/github-snake.svg">
+    srcset="github-snake.svg">
 
   <img
     alt="GitHub Contribution Snake"
-    src="https://raw.githubusercontent.com/productivityx007-coder/productivityx007-coder/output/github-snake.svg">
+    src="github-snake.svg">
 </picture>
 
 <img src="https://github-readme-stats-eta-seven-10.vercel.app/api?username=productivityx007-coder&show_icons=true&count_private=true&include_all_commits=true&hide_rank=true&hide_border=true&title_color=22D3EE&icon_color=A78BFA&text_color=94A3B8&bg_color=0A101F" width="390">
