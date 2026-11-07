@@ -1,13 +1,71 @@
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="https://raw.githubusercontent.com/productivityx007-coder/productivityx007-coder/main/dark.svg">
-
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="https://raw.githubusercontent.com/productivityx007-coder/productivityx007-coder/main/light.svg">
-
+<p align="center">
   <img
+    src="https://raw.githubusercontent.com/productivityx007-coder/productivityx007-coder/main/dark.svg#gh-dark-mode-only"
     alt="Heisenberg GitHub Profile"
-    src="https://raw.githubusercontent.com/productivityx007-coder/productivityx007-coder/main/light.svg">
-</picture>
+  />
+  <img
+    src="https://raw.githubusercontent.com/productivityx007-coder/productivityx007-coder/main/light.svg#gh-light-mode-only"
+    alt="Heisenberg GitHub Profile"
+  />
+</p>
+
+<h2 align="center">Hey, I'm Heisenberg 👋</h2>
+
+<p align="center">
+  <b>Vibe Coder • ECE Student • Builder</b>
+</p>
+
+<p align="center">
+  I build things, break things, and figure out how they work.
+</p>
+
+---
+
+### 🧠 About Me
+
+- 🎓 BE / ECE student
+- 💻 Interested in web development and embedded systems
+- 🔧 Building projects with React, TypeScript, Firebase and ESP32
+- 🚀 Learning by actually building things
+- 📍 Chennai, India
+
+### 🛠️ Currently Building
+
+- **HabitFlow** — habit tracking and accountability
+- **ESP32 projects** — embedded systems and hardware experiments
+- **Personal AI / automation projects**
+
+### ⚡ Tech Stack
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,react,vite,firebase,git,github,arduino,cpp,python" />
+</p>
+
+### 📌 Projects
+
+| Project | Description |
+|---|---|
+| **HabitFlow** | Habit tracking and accountability web app |
+| **ESP32 Projects** | Embedded systems and IoT experiments |
+| **Jarvis** | Personal AI assistant experiments |
+| **WhatsDown** | Independent WhatsApp-inspired messaging project |
+
+### 🌐 Connect
+
+<p align="center">
+  <a href="https://github.com/productivityx007-coder">
+    <img src="https://img.shields.io/badge/GitHub-productivityx007--coder-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
+  <a href="https://instagram.com/jst.dhinx">
+    <img src="https://img.shields.io/badge/Instagram-jst.dhinx-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+  </a>
+  <a href="mailto:productivityx007@gmail.com">
+    <img src="https://img.shields.io/badge/Email-productivityx007%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+</p>
+
+---
+
+<p align="center">
+  <i>Building. Learning. Breaking. Rebuilding.</i>
+</p>
