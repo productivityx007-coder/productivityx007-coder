@@ -50,19 +50,6 @@
 | **Jarvis** | Personal AI assistant experiments |
 | **WhatsDown** | Independent WhatsApp-inspired messaging project |
 
-### 🌐 Connect
-
-<p align="center">
-  <a href="https://github.com/productivityx007-coder">
-    <img src="https://img.shields.io/badge/GitHub-productivityx007--coder-181717?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
-  <a href="https://instagram.com/jst.dhinx">
-    <img src="https://img.shields.io/badge/Instagram-jst.dhinx-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
-  </a>
-  <a href="mailto:productivityx007@gmail.com">
-    <img src="https://img.shields.io/badge/Email-productivityx007%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-  </a>
-</p>
 
 ---
 
